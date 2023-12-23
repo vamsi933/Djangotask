@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center;  background-color: blue; color:white ">
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">name :</label>
+        <input type="text" name="name"><br><br>
+        <label for="director">director :</label>
+        <input type="text" name="director"><br><br>
+        <label for="budget">budget :</label>
+        <input type="text" name="budget"><br><br>
+        <label for="heroname">heroname :</label>
+        <input type="text" name="heroname"><br><br>
+        <label for="no_of_hits">no_of_hits :</label>
+        <input type="text" name="no_of_hits"><br><br>
+        <input type="submit" value="submit">
+    </form>
+</div>
+    {% for i in data%}
+    <div>
+        <p>moviename -{{i.name}}</p>
+        <p>Director _{{i.director}}</p>
+        <p>Budget -{{i.budget}}</p>
+        <p>Heroname -{{i.heroname}}</p>
+        <p>No_of_Hits -{{i.no_of_hits}}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
