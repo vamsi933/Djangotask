@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOFLIO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+        .profile {
+            padding: 30px;
+            text-align: center;
+    
+        }
+        
+        .awards {
+            padding: 20px;
+            height: 60vh;
+            width: 50vh;
+            margin-left: 10px;
+            
+        }
+        
+        .bio {
+            padding: 20px;
+        
+        }
+        
+        .image {
+            width: 200px;
+            margin: 30px;
+        }
+        
+        .heading {
+            font-size: 24px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+
+        }
+        .list{
+            background-color: white;
+            color: black;
+        }
+        .list:hover{
+            background-color: #333;
+            color: skyblue;
+        }
+        .btn{
+            border-radius: 5px;
+            margin-top: 7px;
+            border-color: black;
+            background-color: rgb(192, 251, 255);
+            color: #333;
+            padding: 5px;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .btn:hover{
+            background-color: #333;
+            color: rgb(17, 68, 209);
+        }
+        .main{
+            background-color: #D9AFD9;
+            background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+            text-align: left;
+
+        .p{
+            text-align: center;
+            flex-direction: column;
+            direction: rtl;
+        }
+
+        }
+       .c{
+        text-align: center;
+       }
+
+    </style>
+    <div class="main">
+    <form method="POST">
+        {% csrf_token%}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Protoflio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Skills</a>
+                <a class="nav-link" href="#">CONTACT US</a>
+                <a class="nav-link" href="#login">LOGOUT</a>
+              </div>
+            </div>
+          </nav>
+          
+            <div class="profile" id="homesection">
+                <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/profile-avatar-img.png" class="image" />
+                <h1 class="heading">Vamsidhar Reddy</h1>
+                <p>
+                    About Vamsidhar He is a software developer at marolix technology at a traniee
+                </p>
+               <a href="#biosection">
+                    bio
+                </a>
+          </div>
+        <div class="bio" id="biosection">
+            <h1 class="heading">Bio</h1>
+            <p>
+              My self  Vamsi <span>(Born March 12 ,2000)</span> he is from nandyal at AP 
+            </p>
+            <p>
+                BTECH was completd in santhiram enginnering college branch is <span>ECE</span>
+                with  <span>68.25 %</span> and i aslo completed by intermidiate in sri gayatr jounir college
+
+            </p>
+            <p>
+                one of my biggest acvhiment is complete 30 days code<br>
+                 & i aslo develop some project's on html ,css and bootstrap <br>
+                i enjoy developing the projects <br>
+                Name of the projetc is hotel Menu card & tourisim places <br>
+                curently i am working in marolix technology at trannie !!!!!
+            </p>
+            <a href="#skillsection" class="p">Skills</a>
+        </div>
+        <div class="awards" id="skillsection">
+            <h1 class="heading">Skills</h1>
+            <ul class="c">
+                <li class="list" >PYTHON</li>
+                <li class="list">SQL LITE</li>
+                <li class="list">MY SQL</li>
+                <li class="list">HTML</li>
+                <li class="list"> CSS</li>
+                <li class="list"> BOOTSTRAP</li>
+                <li class="list"> LINUX</li>
+                <li class="list">GIT </li>
+            </ul>
+            <a href="#homesection">back</a>
+        </div>
+        <input type="submit" value="LOGOUT" class="btn">
+    </form>
+</div>
+</body>
+</html>
