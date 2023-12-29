@@ -8,3 +8,4 @@ class Login(models.Model):
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
     confrom_password = models.CharField(max_length=100)
+

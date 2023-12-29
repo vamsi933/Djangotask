@@ -12,10 +12,16 @@ def register_page(request):
         eemail = request.POST['email']
         epassword = request.POST['password']
         econfrom_password = request.POST['confrom_password']
-
         a = Login(user_name=euser_name,first_name=efirst_name,last_name=elast_name,email=eemail,password=epassword,confrom_password=econfrom_password)
         a.save()
-        return redirect('login')
+        if econfrom_password != econfrom_password:
+            return HttpResponse("INCRCT PASSWORD")
+        else:
+          
+
+            return redirect('login')
+    print("Success Register")
+
     return render(request,'register.html')
 
 
@@ -23,13 +29,19 @@ def login_page(request):
     if request.method == "POST":
         buser_name = request.POST['user_name']
         bpassword = request.POST['password']
-        c = auth.authenticate (user_name = buser_name,password = bpassword)
-        if c is not None:
-            auth.login(request.c)
-            # return redirect('home')
-        # else:
-        #     return HttpResponse("Username or Password  is incorrect!!!!!")
-        return redirect('home')
+        log=Login.objects.all()
+        log1= None
+        for i in log:
+            if(i.user_name,i.password)==(buser_name,bpassword):
+                log1=i.user_name
+                break
+        if log1 is not None:
+            print("Success Login")
+            return redirect('home')
+        else:
+            return HttpResponse("INVAlID USERNAME OR PASSWOED!!!")
+        
+            
     return render(request,'login.html')
 
 
